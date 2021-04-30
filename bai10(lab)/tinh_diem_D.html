@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <h1>Tính điểm đại học khối D</h1> <br/>
+    <table>
+        <tr>
+            <td>Điểm Toán</td>
+            <td><input type="text" id="math" size="5"></td>
+        </tr>
+        <tr>
+            <td>Điểm Văn</td>
+            <td><input type="text" id="lite" size="5"></td>
+        </tr>
+        <tr>
+            <td>Điểm Anh</td>
+            <td><input type="text" id="Eng" size="5"></td>
+        </tr>
+        <tr>
+            <td>Khu vực</td>
+            <td>
+                <select name="region" id="region">
+                    <option value="KV1">KV1</option>
+                    <option value="KV2">KV2</option>
+                    <option value="KV2-NT">KV2-NT</option>
+                    <option value="KV3">KV3</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="button" onclick="tinh_diem()">Tính điểm</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="result" style="color: red;">Điểm đại học khối D của bạn là:</p></td>
+        </tr>
+    </table>    
+</body>
+    <script>
+        function tinh_diem() {
+            let math = +document.getElementById('math').value;
+            let lite = +document.getElementById('lite').value;
+            let Eng = +document.getElementById('Eng').value;
+            let region = document.getElementById('region').value;
+            let result = '';
+            switch (region){
+                case 'KV1':
+                    result = 'Điểm thi đại học khối D của bạn là: ' + (math + lite + Eng + 0.75);
+                    break;
+                case 'KV2':
+                    result = 'Điểm thi đại học khối D của bạn là: ' + (math + lite + Eng + 0.25);
+                    break;
+                case 'KV2-NT':
+                    result = 'Điểm thi đại học khối D của bạn là: ' + (math + lite + Eng + 0.5);
+                    break;
+                case 'KV3':
+                    result = 'Điểm thi đại học khối D của bạn là: ' + (math + lite + Eng);
+                    break;
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</html>
