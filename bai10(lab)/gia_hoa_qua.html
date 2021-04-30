@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Giá hoa quả</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="fruit_name"></td>
+            <td><button type="button" onclick="solve()">Tra cứu giá</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="result">Kết quả</p></td>
+        </tr>
+    </table>
+</body>
+<script>
+    function solve(){
+        let fruit_name = document.getElementById('fruit_name').value;
+        let cost =  '' ;
+        switch (fruit_name){
+            case 'Ổi':
+            case "Dưa Hấu":
+                cost = '20000 VNĐ/kg';
+                break;
+            case 'Táo':
+            case 'Xoài':
+                cost = '30000 VNĐ/kg';
+                break;
+            case 'Cam':
+            case 'Chôm Chôm':
+                cost = '40000 VNĐ/kg';
+                break;
+            case 'Măng Cụt':
+                cost = '50000 VNĐ/kg';
+                break;
+        }
+        document.getElementById("result").innerHTML = cost;
+    }
+</script>
+</html>
